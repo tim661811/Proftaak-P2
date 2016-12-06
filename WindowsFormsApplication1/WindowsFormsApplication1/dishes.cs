@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class isErVaat
+    public class dishes
     {
+        private string type;
+
+        public dishes(string newtype)
+        {
+            type = newtype;
+        }
     }
 }
