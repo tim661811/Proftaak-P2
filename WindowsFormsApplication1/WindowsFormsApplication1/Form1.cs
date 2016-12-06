@@ -19,7 +19,11 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            for (int i = 0; i < 25; i++)
+            {
+                MessageBox.Show("Test");
+            }
+            
         }
 
      
