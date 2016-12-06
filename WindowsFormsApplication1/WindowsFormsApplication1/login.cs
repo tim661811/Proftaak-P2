@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
 
         private List<users> userlist = new List<users>();
 
-        public bool passCorrect(users selecteduser)
+        public bool passCorrect(users selectedUser)
         {
             return false;
         }
