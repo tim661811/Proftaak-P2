@@ -16,10 +16,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Sketch1.ino" />
+    <None Include="..\..\..\..\..\Desktop\TVB\TVB.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.Sketch1.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Desktop\TVB\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Desktop\TVB\WORLDcodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -77,12 +77,17 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\Desktop\TVB\TVB.ino" />
     <None Include="Sketch1.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Desktop\TVB\main.h" />
     <ClInclude Include="__vm\.Sketch1.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Desktop\TVB\WORLDcodes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
