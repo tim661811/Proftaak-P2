@@ -14,18 +14,18 @@ namespace WindowsFormsApplication1
 
        
 
-        public bool readMessageArduino()
-        {
-            if (message == "er is vaat")
-            {
-                return areThere = true;
+        //public bool readMessageArduino()
+        //{
+        //    if (message == "er is vaat")
+        //    {
+        //        return areThere = true;
 
 
-            }
-            else if (message == "er is geen vaat")
-            {
-                return areThere = false;
-            }
-        }
+        //    }
+        //    else if (message == "er is geen vaat")
+        //    {
+        //        return areThere = false;
+        //    }
+        //}
     }
 }

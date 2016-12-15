@@ -13,8 +13,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Login : Form
     {
-        string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename ="
-                + @"C:\Users\stant\OneDrive\- Fontys\- FUN12\DuikLogboek (database practise)\DuikLogboek (database practise)\Login.mdf; Integrated Security = True; Connect Timeout = 30";
+        string connectionString = @"Server=tcp:taskm8database.database.windows.net,1433;Initial Catalog=Proftaak_P2;Persist Security Info=False;User ID=taskM8;Password=Welkom00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public Login()
         {
@@ -23,7 +22,7 @@ namespace WindowsFormsApplication1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            loginActions();
         }
 
 
@@ -35,25 +34,46 @@ namespace WindowsFormsApplication1
             // SQL CONNECTION + COMMAND
 
             SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM login 
-                                        WHERE username=@username and 
-                                        password=@password", conn);
-            cmd.Parameters.AddWithValue("@username", tbUsername.Text);
-            cmd.Parameters.AddWithValue("@password", tbPassword.Text);
+            SqlDataAdapter cmd = new SqlDataAdapter(@"SELECT role FROM login 
+                                        WHERE username='"+ tbUsername.Text +"'and password='"+ tbPassword.Text + "'", conn);
+            DataTable dt = new DataTable();
+            
+            cmd.Fill(dt);
+            dt.PrimaryKey = new DataColumn[] { dt.Columns["role"] };
             conn.Open();
             // EINDE SQL GEDEELTE
             // KIJKEN OF DATA KLOPT AAN INGEVULDE WAARDE VVVVVVV
             try
             {
-                int result = (int)cmd.ExecuteScalar();
-                if (result > 0)
+                if (dt.Rows.Count == 1)
                 {
+                    dataGridView1.DataSource = dt;
                     MessageBox.Show("Welkom " + tbUsername.Text);
 
-                    Form1 newform = new Form1();
+                    if (dt.Rows.Contains("parent"))
+                    {
+                        parentForm parentForm = new parentForm();
 
-                    this.Hide();
-                    newform.Show();
+                        this.Hide();
+                        parentForm.Show();
+                    }
+                    if (dt.Rows.Contains("child"))
+                    {
+                        childForm childForm = new childForm();
+
+                        this.Hide();
+                        childForm.Show();
+                    }
+                    if (dt.Rows.Contains("admin"))
+                    {
+                        childForm childForm = new childForm();
+                        parentForm parentForm = new parentForm();
+
+                        this.Hide();
+                        parentForm.Show();
+                        childForm.Show();
+                    }
+
 
                 }
                 else
@@ -76,5 +96,6 @@ namespace WindowsFormsApplication1
             }
         }
 
+        
     }
 }

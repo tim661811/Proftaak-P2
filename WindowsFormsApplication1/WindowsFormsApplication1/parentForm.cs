@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class parentForm : Form
     {
-        public Form1()
+        public parentForm()
         {
             InitializeComponent();
         }
@@ -39,6 +39,11 @@ namespace WindowsFormsApplication1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
