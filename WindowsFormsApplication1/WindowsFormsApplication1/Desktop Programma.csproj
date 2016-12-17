@@ -88,6 +88,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="users.cs" />
+    <EmbeddedResource Include="childForm.resx">
+      <DependentUpon>childForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="parentForm.resx">
       <DependentUpon>parentForm.cs</DependentUpon>
     </EmbeddedResource>
