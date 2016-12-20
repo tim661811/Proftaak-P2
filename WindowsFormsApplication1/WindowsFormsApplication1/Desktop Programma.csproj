@@ -133,10 +133,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2016-12-13 at 10.22.23 AM.jpeg" />
+    <None Include="Resources\Laptop.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Wifi icon.png" />
+    <None Include="Resources\tv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wifi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -63,9 +63,9 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2016_12_13_at_10_22_23_AM {
+        internal static System.Drawing.Bitmap Laptop {
             get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2016-12-13 at 10.22.23 AM", resourceCulture);
+                object obj = ResourceManager.GetObject("Laptop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Wifi_icon {
+        internal static System.Drawing.Bitmap tv {
             get {
-                object obj = ResourceManager.GetObject("Wifi_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("tv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wifi {
+            get {
+                object obj = ResourceManager.GetObject("Wifi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
