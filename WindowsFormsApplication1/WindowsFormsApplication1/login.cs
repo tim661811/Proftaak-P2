@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             {
                 if (dt.Rows.Count == 1)
                 {
-                    dataGridView1.DataSource = dt;
+                    
                     MessageBox.Show("Welkom " + tbUsername.Text);
 
                     if (dt.Rows.Contains("parent"))
