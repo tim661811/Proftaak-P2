@@ -16,5 +16,15 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void childForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
