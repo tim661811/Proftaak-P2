@@ -17,9 +17,11 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        string toViewDate;
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            toViewDate = dateTimePicker1.Value.ToString();
         }
 
         private void childForm_FormClosed(object sender, FormClosedEventArgs e)

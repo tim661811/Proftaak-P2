@@ -25,6 +25,11 @@ namespace WindowsFormsApplication1
             }
             
         }
+        int cleaningTime;
+        bool TV;
+        bool WiFi;
+        bool Laptop;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,5 +51,51 @@ namespace WindowsFormsApplication1
             Application.Exit();
         }
 
+        private void dropDownTimer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cleaningTime = Convert.ToInt32(dropDownTimer.Text.Substring(0,dropDownTimer.Text.IndexOf(" ")));
+            MessageBox.Show(cleaningTime.ToString());
+        }
+
+        private void cbWifi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbWifi.CheckState == CheckState.Checked)
+            {
+                WiFi = true;
+            }
+            else
+            {
+                WiFi = false;
+            }
+        }
+
+        private void cbTv_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTv.CheckState == CheckState.Checked)
+            {
+                TV = true;
+            }
+            else
+            {
+                TV = false;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLaptop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbLaptop.CheckState == CheckState.Checked)
+            {
+                Laptop = true;
+            }
+            else
+            {
+                Laptop = false;
+            }
+        }
     }
 }
