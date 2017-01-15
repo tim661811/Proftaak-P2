@@ -84,10 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Desktop\TVB\main.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\Arduino\ultrasoon\pitches.h" />
     <ClInclude Include="__vm\.Sketch1.vsarduino.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\TVB\WORLDcodes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
