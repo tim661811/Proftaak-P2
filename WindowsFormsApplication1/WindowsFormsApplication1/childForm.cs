@@ -34,19 +34,47 @@ namespace WindowsFormsApplication1
             Application.Exit();
         }
 
-        private void getChildInfo()
+        /*private void getChildInfo()
         {
 
             
             
             SqlConnection conn = new SqlConnection(connectionString);
-            string result = @"SELECT * FROM Vaat WHERE UserID = @UserID AND date = "+dateTimePicker1.Value.ToString()+";";
-
+            string result = @"SELECT * FROM Vaat WHERE Datum = '" + dateTimePicker1.Value.ToString() + "';";
+            conn.Open();
             SqlCommand showresult = new SqlCommand(result, conn);
             SqlDataReader data = showresult.ExecuteReader();
             lbOnTime.Items.Add(data["Vaat_optijd"].ToString());
             lbTooLate.Items.Add(data["Vaat_TeLaat"].ToString());
             lbUpcoming.Items.Add(data["Vaat_aankomend"].ToString());
+            conn.Close();
+        }*/
+
+        private void childForm_Load(object sender, EventArgs e)
+        {
+            //getChildInfo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            using (SqlDataAdapter query = new SqlDataAdapter("SELECT * FROM Vaat WHERE Datum ='"+dateTimePicker1.Value.ToString()+"'", conn))
+            {
+
+                var data = new DataTable();
+                query.Fill(data);
+
+                lbOnTime.DisplayMember = "Vaat_optijd";
+                lbTooLate.DisplayMember = "Vaat_TeLaat";
+                lbUpcoming.DisplayMember = "Vaat_aankomend";
+
+                lbOnTime.DataSource = data;
+                lbTooLate.DataSource = data;
+                lbUpcoming.DataSource = data;
+
+            }
+                
+
         }
     }
 }
