@@ -188,6 +188,7 @@
             this.dropDownTimer.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropDownTimer.FormattingEnabled = true;
             this.dropDownTimer.Items.AddRange(new object[] {
+            "1 minuut",
             "15 minuten",
             "30 minuten",
             "45 minuten",
@@ -233,9 +234,6 @@
             this.btnSaveSettins.UseVisualStyleBackColor = true;
             this.btnSaveSettins.Click += new System.EventHandler(this.btnSaveSettings_Click_1);
             // 
-            // timer
-            // 
-            // 
             // parentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,7 +244,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "parentForm";
             this.Text = " 8¾¾8¾,";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

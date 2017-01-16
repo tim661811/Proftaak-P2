@@ -45,6 +45,7 @@ namespace WindowsFormsApplication1
         bool TV;
         bool WiFi;
         bool Laptop;
+        int timerCounter = 0;
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -146,15 +147,25 @@ namespace WindowsFormsApplication1
             
         }
 
+        private  void timerElapsedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            timerCounter++;
+        }
+
+        
+        private static System.Timers.Timer timer1 = new System.Timers.Timer(60000);
+
         private void timerRead_Tick(object sender, EventArgs e)
         {
             String dataFromArduino = serial.ReadLine().ToString();
             if(dataFromArduino == "#DISHES_DETECTED%")
             {
-                timer.Start();
-                if(timer.ToString() == cleaningTime.ToString())
+                timer1.Start();
+                timer1.Elapsed += timerElapsedEvent;
+                
+                if(timerCounter >= cleaningTime)
                 {
-
+                    serial.Write("#KILL_TV%");
                 }
             }
         }
