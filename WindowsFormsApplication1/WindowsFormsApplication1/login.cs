@@ -41,12 +41,12 @@ namespace WindowsFormsApplication1
             // SQL CONNECTION + COMMAND
 
             SqlConnection conn = new SqlConnection(connectionString);
-            SqlDataAdapter cmd = new SqlDataAdapter(@"SELECT role FROM user 
-                                        WHERE username='"+ tbUsername.Text +"'and password='"+ tbPassword.Text + "'", conn);
+            SqlDataAdapter cmd = new SqlDataAdapter(@"SELECT Role FROM login "+ 
+                                        "WHERE Username='"+ tbUsername.Text +"'and Password='"+ tbPassword.Text + "'", conn);
             DataTable dt = new DataTable();
             
             cmd.Fill(dt);
-            dt.PrimaryKey = new DataColumn[] { dt.Columns["role"] };
+            dt.PrimaryKey = new DataColumn[] { dt.Columns["Role"] };
             conn.Open();
             // EINDE SQL GEDEELTE
             // KIJKEN OF DATA KLOPT AAN INGEVULDE WAARDE VVVVVVV
