@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(parentForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,8 @@
             this.dropDownTimer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveSettins = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -170,7 +172,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.dropDownTimer);
             this.groupBox2.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(581, 12);
@@ -203,7 +204,7 @@
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 359);
+            this.groupBox3.Location = new System.Drawing.Point(12, 430);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -222,22 +223,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(993, 295);
             this.dataGridView1.TabIndex = 3;
             // 
-            // button1
+            // btnSaveSettins
             // 
-            this.button1.Location = new System.Drawing.Point(129, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(225, 119);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Testbutton";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSaveSettins.Location = new System.Drawing.Point(859, 366);
+            this.btnSaveSettins.Name = "btnSaveSettins";
+            this.btnSaveSettins.Size = new System.Drawing.Size(190, 59);
+            this.btnSaveSettins.TabIndex = 3;
+            this.btnSaveSettins.Text = "Opslaan";
+            this.btnSaveSettins.UseVisualStyleBackColor = true;
+            this.btnSaveSettins.Click += new System.EventHandler(this.btnSaveSettings_Click_1);
+            // 
+            // timer
+            // 
             // 
             // parentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1080, 764);
+            this.ClientSize = new System.Drawing.Size(1080, 819);
+            this.Controls.Add(this.btnSaveSettins);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -274,7 +279,8 @@
         private System.Windows.Forms.ComboBox dropDownTimer;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveSettins;
+        private System.Windows.Forms.Timer timer;
     }
 }
 

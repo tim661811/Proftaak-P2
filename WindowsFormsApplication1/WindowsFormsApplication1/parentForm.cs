@@ -30,15 +30,16 @@ namespace WindowsFormsApplication1
             serial.StopBits = StopBits.One;
             //serial.DataReceived += new SerialDataReceivedEventHandler(serial_DataReceived);
             serial.Open();
+
+            Timer timerRead = new Timer();
+            timerRead.Interval = 1000; //hoevaak jij wil kijken
+            timerRead.Tick += new System.EventHandler(timerRead_Tick);
+
+            timer.Start();
         }
 
 
-        void SendData()
-        {
-            serial.Write("Test");
-        }
-
-
+        
         
         int cleaningTime;
         bool TV;
@@ -74,26 +75,12 @@ namespace WindowsFormsApplication1
 
         private void cbWifi_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbWifi.CheckState == CheckState.Checked)
-            {
-                WiFi = true;
-            }
-            else
-            {
-                WiFi = false;
-            }
+            
         }
 
         private void cbTv_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbTv.CheckState == CheckState.Checked)
-            {
-                TV = true;
-            }
-            else
-            {
-                TV = false;
-            }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -103,6 +90,35 @@ namespace WindowsFormsApplication1
 
         private void cbLaptop_CheckedChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            SendData();
+        }
+
+        private void btnSaveSettings_Click_1(object sender, EventArgs e)
+        {
+            if (cbWifi.CheckState == CheckState.Checked)
+            {
+                WiFi = true;
+            }
+            else
+            {
+                WiFi = false;
+            }
+
+            if (cbTv.CheckState == CheckState.Checked)
+            {
+                TV = true;
+            }
+            else
+            {
+                TV = false;
+            }
+
             if (cbLaptop.CheckState == CheckState.Checked)
             {
                 Laptop = true;
@@ -113,9 +129,34 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        void SendData()
         {
-            SendData();
+            if (cbWifi.Checked)
+            {
+                serial.Write("Wifi");
+            }
+            else if (cbTv.Checked)
+            {
+                serial.Write("Tv");
+            }
+            else if (cbLaptop.Checked)
+            {
+                serial.Write("Laptop");
+            }
+            
+        }
+
+        private void timerRead_Tick(object sender, EventArgs e)
+        {
+            String dataFromArduino = serial.ReadLine().ToString();
+            if(dataFromArduino == "#DISHES_DETECTED%")
+            {
+                timer.Start();
+                if(timer.ToString() == cleaningTime.ToString())
+                {
+
+                }
+            }
         }
     }
 }
