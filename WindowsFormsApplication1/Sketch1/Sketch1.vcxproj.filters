@@ -25,10 +25,8 @@
     <ClInclude Include="..\..\..\..\..\Desktop\TVB\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\TVB\WORLDcodes.cpp">
+    <ClInclude Include="..\..\..\..\..\Documents\Arduino\ultrasoon\pitches.h">
       <Filter>Source Files</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>
