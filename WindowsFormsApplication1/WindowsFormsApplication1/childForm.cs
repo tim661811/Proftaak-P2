@@ -17,10 +17,10 @@ namespace WindowsFormsApplication1
         string connectionString = @"Server=tcp:taskm8database.database.windows.net,1433;Initial Catalog=Proftaak_P2;Persist Security Info=False;User ID=taskM8;Password=Welkom00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         
 
-        public childForm()
+        public childForm(string currentUser)
         {
             InitializeComponent();
-            
+            //MessageBox.Show(currentUser);
         }
 
         string toViewDate;

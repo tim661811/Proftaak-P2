@@ -15,6 +15,8 @@ namespace WindowsFormsApplication1
     {
         string connectionString = @"Server=tcp:taskm8database.database.windows.net,1433;Initial Catalog=Proftaak_P2;Persist Security Info=False;User ID=taskM8;Password=Welkom00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+        string currUser;
+
         public Login()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace WindowsFormsApplication1
             {
                 if (dt.Rows.Count == 1)
                 {
-                    
+                    currUser = tbUsername.Text;
                     MessageBox.Show("Welkom " + tbUsername.Text);
 
                     if (dt.Rows.Contains("parent"))
@@ -66,14 +68,14 @@ namespace WindowsFormsApplication1
                     }
                     if (dt.Rows.Contains("child"))
                     {
-                        childForm childForm = new childForm();
+                        childForm childForm = new childForm(currUser);
 
                         this.Hide();
                         childForm.Show();
                     }
                     if (dt.Rows.Contains("admin"))
                     {
-                        childForm childForm = new childForm();
+                        childForm childForm = new childForm(currUser);
                         parentForm parentForm = new parentForm();
 
                         this.Hide();
