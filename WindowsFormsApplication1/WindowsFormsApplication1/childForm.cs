@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
 
         string connectionString = @"Server=tcp:taskm8database.database.windows.net,1433;Initial Catalog=Proftaak_P2;Persist Security Info=False;User ID=taskM8;Password=Welkom00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+
         public childForm()
         {
             InitializeComponent();
@@ -35,14 +36,17 @@ namespace WindowsFormsApplication1
 
         private void getChildInfo()
         {
+
+            
+            
             SqlConnection conn = new SqlConnection(connectionString);
-            string result = @"SELECT * FROM kind WHERE id= kindnummer AND date = @dateTimePicker1;";
+            string result = @"SELECT * FROM Vaat WHERE UserID = @UserID AND date = "+dateTimePicker1.Value.ToString()+";";
 
             SqlCommand showresult = new SqlCommand(result, conn);
             SqlDataReader data = showresult.ExecuteReader();
-            lbOnTime.Items.Add(data["aantal keer op tijd"].ToString());
-            lbTooLate.Items.Add(data["aantal keer te laat"].ToString());
-            lbUpcoming.Items.Add(data["aankomend"].ToString());
+            lbOnTime.Items.Add(data["Vaat_optijd"].ToString());
+            lbTooLate.Items.Add(data["Vaat_TeLaat"].ToString());
+            lbUpcoming.Items.Add(data["Vaat_aankomend"].ToString());
         }
     }
 }
