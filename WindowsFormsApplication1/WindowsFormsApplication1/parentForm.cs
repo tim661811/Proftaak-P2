@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Media;
 
 namespace WindowsFormsApplication1
 {
@@ -28,25 +29,46 @@ namespace WindowsFormsApplication1
             serial.Parity = Parity.None;
             serial.DataBits = 8;
             serial.StopBits = StopBits.One;
-            //serial.DataReceived += new SerialDataReceivedEventHandler(serial_DataReceived);
+            serial.DataReceived += new SerialDataReceivedEventHandler(serial_DataReceived);
             serial.Open();
 
             Timer timerRead = new Timer();
-            timerRead.Interval = 1000; //hoevaak jij wil kijken
-            timerRead.Tick += new System.EventHandler(timerRead_Tick);
+            timerRead.Interval = 10; //hoevaak jij wil kijken
+            timerRead.Tick += new EventHandler(timerRead_Tick);
 
             timer.Start();
+
+            
         }
 
+        String dataFromArduino;
 
-        
-        
+        private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            if (serial.ReadLine() != "0" && serial.ReadLine() != "#DISHES_DETECTED%")
+            {
+                MessageBox.Show(serial.ReadLine());
+            }
+
+
+
+            dataFromArduino = serial.ReadLine().ToString();
+            if (dataFromArduino == "#DISHES_DETECTED%")
+            {
+                timer1.Start();
+            }
+                
+            
+
+        }
+
         int cleaningTime;
         bool TV;
         bool WiFi;
         bool Laptop;
         int timerCounter = 0;
         private static System.Timers.Timer timer1 = new System.Timers.Timer(60000);
+        
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -153,23 +175,32 @@ namespace WindowsFormsApplication1
             timerCounter++;
         }
 
-        
-        
+        private void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            simpleSound.Play();
+        }
+
 
         private void timerRead_Tick(object sender, EventArgs e)
         {
-            String dataFromArduino = serial.ReadLine().ToString();
-            if(dataFromArduino == "#DISHES_DETECTED%")
+            timer1.Elapsed += timerElapsedEvent;
+
+            if (timerCounter >= cleaningTime)
             {
-                timer1.Start();
-                timer1.Elapsed += timerElapsedEvent;
-                
-                if(timerCounter >= cleaningTime)
-                {
-                    serial.Write("#KILL_TV%");
-                    //ALS WERKT DO SendData();
-                }
+                serial.Write("#KILL_TV%");
+                //ALS WERKT DO SendData();
             }
+            if (dataFromArduino == "MAKE_NOISE")
+            {
+                playSimpleSound();
+            }
+            //MessageBox.Show(dataFromArduino);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            serial.Write("#PLAY_ALARM%");
         }
     }
 }
