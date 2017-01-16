@@ -43,10 +43,14 @@
             this.dropDownTimer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,11 +65,11 @@
             this.groupBox1.Controls.Add(this.cbWifi);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(405, 266);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(540, 327);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sancties Kiezen";
@@ -74,20 +78,20 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(25, 185);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(33, 228);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(81, 67);
+            this.pictureBox3.Size = new System.Drawing.Size(108, 82);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
             // cbLaptop
             // 
             this.cbLaptop.AutoSize = true;
-            this.cbLaptop.Location = new System.Drawing.Point(355, 210);
-            this.cbLaptop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLaptop.Location = new System.Drawing.Point(473, 258);
+            this.cbLaptop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLaptop.Name = "cbLaptop";
-            this.cbLaptop.Size = new System.Drawing.Size(15, 14);
+            this.cbLaptop.Size = new System.Drawing.Size(18, 17);
             this.cbLaptop.TabIndex = 10;
             this.cbLaptop.UseVisualStyleBackColor = true;
             this.cbLaptop.CheckedChanged += new System.EventHandler(this.cbLaptop_CheckedChanged);
@@ -96,30 +100,29 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 203);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(149, 250);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 31);
+            this.label4.Size = new System.Drawing.Size(298, 40);
             this.label4.TabIndex = 9;
             this.label4.Text = "Laptopscherm op zwart";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(25, 120);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(33, 148);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 61);
+            this.pictureBox2.Size = new System.Drawing.Size(108, 75);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // cbTv
             // 
             this.cbTv.AutoSize = true;
-            this.cbTv.Location = new System.Drawing.Point(355, 145);
-            this.cbTv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTv.Location = new System.Drawing.Point(473, 178);
+            this.cbTv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTv.Name = "cbTv";
-            this.cbTv.Size = new System.Drawing.Size(15, 14);
+            this.cbTv.Size = new System.Drawing.Size(18, 17);
             this.cbTv.TabIndex = 7;
             this.cbTv.UseVisualStyleBackColor = true;
             this.cbTv.CheckedChanged += new System.EventHandler(this.cbTv_CheckedChanged);
@@ -128,30 +131,29 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(110, 136);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(147, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 31);
+            this.label3.Size = new System.Drawing.Size(134, 40);
             this.label3.TabIndex = 6;
             this.label3.Text = "TV valt uit";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 56);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 75);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // cbWifi
             // 
             this.cbWifi.AutoSize = true;
-            this.cbWifi.Location = new System.Drawing.Point(355, 80);
-            this.cbWifi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbWifi.Location = new System.Drawing.Point(473, 98);
+            this.cbWifi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbWifi.Name = "cbWifi";
-            this.cbWifi.Size = new System.Drawing.Size(15, 14);
+            this.cbWifi.Size = new System.Drawing.Size(18, 17);
             this.cbWifi.TabIndex = 3;
             this.cbWifi.UseVisualStyleBackColor = true;
             this.cbWifi.CheckedChanged += new System.EventHandler(this.cbWifi_CheckedChanged);
@@ -160,22 +162,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(149, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 31);
+            this.label1.Size = new System.Drawing.Size(133, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Wifi uitval";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.dropDownTimer);
             this.groupBox2.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(436, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(581, 12);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(351, 266);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(468, 327);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Timer instellen";
@@ -189,10 +191,10 @@
             "30 minuten",
             "45 minuten",
             "60 minuten"});
-            this.dropDownTimer.Location = new System.Drawing.Point(14, 55);
-            this.dropDownTimer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dropDownTimer.Location = new System.Drawing.Point(19, 68);
+            this.dropDownTimer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dropDownTimer.Name = "dropDownTimer";
-            this.dropDownTimer.Size = new System.Drawing.Size(319, 37);
+            this.dropDownTimer.Size = new System.Drawing.Size(424, 46);
             this.dropDownTimer.TabIndex = 2;
             this.dropDownTimer.Text = "Selecteer tijd om op te ruimen";
             this.dropDownTimer.SelectedIndexChanged += new System.EventHandler(this.dropDownTimer_SelectedIndexChanged);
@@ -201,11 +203,11 @@
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 292);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(12, 359);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(778, 307);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(1037, 378);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Overzicht";
@@ -213,22 +215,33 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 41);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(745, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(993, 295);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(129, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 119);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Testbutton";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // parentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(810, 621);
+            this.ClientSize = new System.Drawing.Size(1080, 764);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "parentForm";
             this.Text = " 8¾¾8¾,";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -261,6 +274,7 @@
         private System.Windows.Forms.ComboBox dropDownTimer;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

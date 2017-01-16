@@ -7,24 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace WindowsFormsApplication1
 {
+    
     public partial class parentForm : Form
     {
+        SerialPort serial;
+
         public parentForm()
         {
             InitializeComponent();
+
+            serial = new SerialPort();
+            serial.PortName = "COM4";
+            serial.BaudRate = 9600; //zou ik t zelfde zetten als je arduino applicatie
+            serial.DtrEnable = true;
+            serial.Encoding = Encoding.Default;
+            serial.Parity = Parity.None;
+            serial.DataBits = 8;
+            serial.StopBits = StopBits.One;
+            //serial.DataReceived += new SerialDataReceivedEventHandler(serial_DataReceived);
+            serial.Open();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        void SendData()
         {
-            for (int i = 0; i < 99; i++)
-            {
-                MessageBox.Show("Test");
-            }
-            
+            serial.Write("Test");
         }
+
+
+        
         int cleaningTime;
         bool TV;
         bool WiFi;
@@ -96,6 +111,11 @@ namespace WindowsFormsApplication1
             {
                 Laptop = false;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SendData();
         }
     }
 }
