@@ -26,9 +26,16 @@ namespace WindowsFormsApplication1
         }
 
 
-       
-/// ////////////////////////////////////////////////////Methodes////////////////////////////////////////////////////////////
-        
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginActions();
+            }
+        }
+
+        /// ////////////////////////////////////////////////////Methodes////////////////////////////////////////////////////////////
+
         private void loginActions()
         {
             // SQL CONNECTION + COMMAND
@@ -96,6 +103,5 @@ namespace WindowsFormsApplication1
             }
         }
 
-        
     }
 }
