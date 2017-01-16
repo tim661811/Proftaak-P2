@@ -40,8 +40,9 @@ namespace WindowsFormsApplication1
 
             SqlCommand showresult = new SqlCommand(result, conn);
             SqlDataReader data = showresult.ExecuteReader();
-            label3.Text = data["aantal keer op tijd"].ToString();
-            label4.Text = data["aantal keer te laat"].ToString();
+            lbOnTime.Items.Add(data["aantal keer op tijd"].ToString());
+            lbTooLate.Items.Add(data["aantal keer te laat"].ToString());
+            lbUpcoming.Items.Add(data["aankomend"].ToString());
         }
     }
 }
