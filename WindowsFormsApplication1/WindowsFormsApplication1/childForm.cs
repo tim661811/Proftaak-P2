@@ -19,7 +19,9 @@ namespace WindowsFormsApplication1
 
         public childForm(string currentUser)
         {
+            
             InitializeComponent();
+            label5.Text = currentUser;
             //MessageBox.Show(currentUser);
         }
 
@@ -37,14 +39,16 @@ namespace WindowsFormsApplication1
 
         private void childForm_Load(object sender, EventArgs e)
         {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string user = label5.Text;
             SqlConnection conn = new SqlConnection(connectionString);
-            using (SqlDataAdapter query = new SqlDataAdapter("SELECT * FROM Vaat WHERE Datum ='"+dateTimePicker1.Value.ToString()+"'", conn))
+            using (SqlDataAdapter query = new SqlDataAdapter("SELECT * FROM Vaat WHERE Username ='"+user+"' AND Datum ='"+dateTimePicker1.Value.ToString()+"'", conn))
             {
-
+                
                 var data = new DataTable();
                 query.Fill(data);
 
