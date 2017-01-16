@@ -46,6 +46,7 @@ namespace WindowsFormsApplication1
         bool WiFi;
         bool Laptop;
         int timerCounter = 0;
+        private static System.Timers.Timer timer1 = new System.Timers.Timer(60000);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -134,15 +135,15 @@ namespace WindowsFormsApplication1
         {
             if (cbWifi.Checked)
             {
-                serial.Write("Wifi");
+                serial.Write("#KILL_WIFI%");
             }
-            else if (cbTv.Checked)
+            if (cbTv.Checked)
             {
-                serial.Write("Tv");
+                serial.Write("#KILL_TV%");
             }
-            else if (cbLaptop.Checked)
+            if (cbLaptop.Checked)
             {
-                serial.Write("Laptop");
+                serial.Write("#KILL_LAPTOP%");
             }
             
         }
@@ -153,7 +154,7 @@ namespace WindowsFormsApplication1
         }
 
         
-        private static System.Timers.Timer timer1 = new System.Timers.Timer(60000);
+        
 
         private void timerRead_Tick(object sender, EventArgs e)
         {
@@ -166,6 +167,7 @@ namespace WindowsFormsApplication1
                 if(timerCounter >= cleaningTime)
                 {
                     serial.Write("#KILL_TV%");
+                    //ALS WERKT DO SendData();
                 }
             }
         }
