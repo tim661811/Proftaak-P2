@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(parentForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbLaptop = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbTv = new System.Windows.Forms.CheckBox();
