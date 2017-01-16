@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 
             serial = new SerialPort();
-            serial.PortName = "COM4";
+            serial.PortName = "COM8";
             serial.BaudRate = 9600; //zou ik t zelfde zetten als je arduino applicatie
             serial.DtrEnable = true;
             serial.Encoding = Encoding.Default;

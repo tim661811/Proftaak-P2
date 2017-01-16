@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
             // SQL CONNECTION + COMMAND
 
             SqlConnection conn = new SqlConnection(connectionString);
-            SqlDataAdapter cmd = new SqlDataAdapter(@"SELECT role FROM login 
+            SqlDataAdapter cmd = new SqlDataAdapter(@"SELECT role FROM user 
                                         WHERE username='"+ tbUsername.Text +"'and password='"+ tbPassword.Text + "'", conn);
             DataTable dt = new DataTable();
             
