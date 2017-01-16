@@ -8,6 +8,7 @@ String message = "";
 char readChar;
 int messageCount = 0;
 bool messageStarted = false;
+bool timerStarted;
 
 // notes in the melody:
 int melody[] = {
@@ -28,6 +29,7 @@ void setup()
 
 void loop()
 {
+	millis()
 	int x = 0;
 	x = ping();
 	Serial.println(x);
@@ -35,6 +37,7 @@ void loop()
 
 	if (x<20) {
 		Serial.println("DISHES DETECTED!");
+		timerStarted = true;
 	}
 
 	messaging();
@@ -126,31 +129,7 @@ void checkIfMessageEquals() {
 	{
 		playAlarm();
 	}
-	if (message == "SET_RED:" && remote == true)
-	{
-		Serial.println("set_red received");
-		setColorRgb(valueR.toInt(), valueG.toInt(), valueB.toInt());
-		changedRed = true;
-
-		logColors(valueR.toInt(), valueG.toInt(), valueB.toInt());
-
-	}
-	if (message == "SET_GREEN:" && remote == true)
-	{
-		Serial.println("set_green received");
-		setColorRgb(valueR.toInt(), valueG.toInt(), valueB.toInt());
-		changedGreen = true;
-
-		logColors(valueR.toInt(), valueG.toInt(), valueB.toInt());
-	}
-	if (message == "SET_BLUE:" && remote == true)
-	{
-		Serial.println("set_blue received");
-		setColorRgb(valueR.toInt(), valueG.toInt(), valueB.toInt());
-		changedBlue = true;
-
-		logColors(valueR.toInt(), valueG.toInt(), valueB.toInt());
-	}
+	
 }
 
 
